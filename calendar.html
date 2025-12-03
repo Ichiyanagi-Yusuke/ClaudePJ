@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>営業日カレンダー - RENTAL AAA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="header-logo.png" alt="RENTAL AAA" class="logo-image">
+            </a>
+
+            <!-- ハンバーガーメニューボタン -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- サイドメニュー -->
+    <div class="side-menu" id="sideMenu">
+        <div class="side-menu-close" id="closeMenu">&times;</div>
+        <ul class="side-menu-list">
+            <li><a href="index.html#about" class="side-menu-link">ABOUT</a></li>
+            <li><a href="pricing-detail.html" class="side-menu-link">レンタル料金</a></li>
+            <li><a href="index.html#access" class="side-menu-link">アクセス</a></li>
+            <li><a href="calendar.html" class="side-menu-link">営業日カレンダー</a></li>
+            <li><a href="news.html" class="side-menu-link">NEWS&BLOG</a></li>
+        </ul>
+        <!-- メニュー内予約ボタン -->
+        <div class="side-menu-reservation">
+            <a href="#reservation" class="btn-side-reservation">予約する</a>
+        </div>
+    </div>
+
+    <!-- オーバーレイ -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ページヘッダー -->
+    <section class="page-header">
+        <div class="container">
+            <h1>営業日カレンダー</h1>
+            <p>2025-2026シーズン</p>
+        </div>
+    </section>
+
+    <!-- カレンダーセクション -->
+    <section class="calendar-section">
+        <div class="container">
+            <div class="calendar-intro">
+                <h2>営業期間：2025年12月13日〜2026年4月5日</h2>
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <span class="legend-color type-a"></span>
+                        <span>時短営業A（5:00-18:30）</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color type-b"></span>
+                        <span>時短営業B（6:00-18:00）</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color type-c"></span>
+                        <span>時短営業C（5:00-18:00）</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color type-d"></span>
+                        <span>通常営業（2:00-6:30）</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color closed"></span>
+                        <span>営業期間外</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2025年12月 -->
+            <div class="calendar-month">
+                <h3 class="month-title">2025年12月</h3>
+                <div class="calendar-grid">
+                    <div class="calendar-weekday">日</div>
+                    <div class="calendar-weekday">月</div>
+                    <div class="calendar-weekday">火</div>
+                    <div class="calendar-weekday">水</div>
+                    <div class="calendar-weekday">木</div>
+                    <div class="calendar-weekday">金</div>
+                    <div class="calendar-weekday">土</div>
+
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day closed">1</div>
+                    <div class="calendar-day closed">2</div>
+                    <div class="calendar-day closed">3</div>
+                    <div class="calendar-day closed">4</div>
+                    <div class="calendar-day closed">5</div>
+                    <div class="calendar-day closed">6</div>
+
+                    <div class="calendar-day closed">7</div>
+                    <div class="calendar-day closed">8</div>
+                    <div class="calendar-day closed">9</div>
+                    <div class="calendar-day closed">10</div>
+                    <div class="calendar-day closed">11</div>
+                    <div class="calendar-day closed">12</div>
+                    <div class="calendar-day type-a">13</div>
+
+                    <div class="calendar-day type-a">14</div>
+                    <div class="calendar-day type-b">15</div>
+                    <div class="calendar-day type-b">16</div>
+                    <div class="calendar-day type-b">17</div>
+                    <div class="calendar-day type-b">18</div>
+                    <div class="calendar-day type-b">19</div>
+                    <div class="calendar-day type-a">20</div>
+
+                    <div class="calendar-day type-a">21</div>
+                    <div class="calendar-day type-c">22</div>
+                    <div class="calendar-day type-c">23</div>
+                    <div class="calendar-day type-c">24</div>
+                    <div class="calendar-day type-c">25</div>
+                    <div class="calendar-day type-c">26</div>
+                    <div class="calendar-day type-d">27</div>
+
+                    <div class="calendar-day type-d">28</div>
+                    <div class="calendar-day type-d">29</div>
+                    <div class="calendar-day type-d">30</div>
+                    <div class="calendar-day type-c">31</div>
+                </div>
+            </div>
+
+            <!-- 2026年1月 -->
+            <div class="calendar-month">
+                <h3 class="month-title">2026年1月</h3>
+                <div class="calendar-grid">
+                    <div class="calendar-weekday">日</div>
+                    <div class="calendar-weekday">月</div>
+                    <div class="calendar-weekday">火</div>
+                    <div class="calendar-weekday">水</div>
+                    <div class="calendar-weekday">木</div>
+                    <div class="calendar-weekday">金</div>
+                    <div class="calendar-weekday">土</div>
+
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day type-c">1</div>
+                    <div class="calendar-day type-d">2</div>
+                    <div class="calendar-day type-d">3</div>
+
+                    <div class="calendar-day type-d">4</div>
+                    <div class="calendar-day type-c">5</div>
+                    <div class="calendar-day type-c">6</div>
+                    <div class="calendar-day type-c">7</div>
+                    <div class="calendar-day type-c">8</div>
+                    <div class="calendar-day type-c">9</div>
+                    <div class="calendar-day type-d">10</div>
+
+                    <div class="calendar-day type-d">11</div>
+                    <div class="calendar-day type-c">12</div>
+                    <div class="calendar-day type-c">13</div>
+                    <div class="calendar-day type-c">14</div>
+                    <div class="calendar-day type-c">15</div>
+                    <div class="calendar-day type-c">16</div>
+                    <div class="calendar-day type-d">17</div>
+
+                    <div class="calendar-day type-d">18</div>
+                    <div class="calendar-day type-c">19</div>
+                    <div class="calendar-day type-c">20</div>
+                    <div class="calendar-day type-c">21</div>
+                    <div class="calendar-day type-c">22</div>
+                    <div class="calendar-day type-c">23</div>
+                    <div class="calendar-day type-d">24</div>
+
+                    <div class="calendar-day type-d">25</div>
+                    <div class="calendar-day type-c">26</div>
+                    <div class="calendar-day type-c">27</div>
+                    <div class="calendar-day type-c">28</div>
+                    <div class="calendar-day type-c">29</div>
+                    <div class="calendar-day type-c">30</div>
+                    <div class="calendar-day type-d">31</div>
+                </div>
+            </div>
+
+            <!-- 2026年2月 -->
+            <div class="calendar-month">
+                <h3 class="month-title">2026年2月</h3>
+                <div class="calendar-grid">
+                    <div class="calendar-weekday">日</div>
+                    <div class="calendar-weekday">月</div>
+                    <div class="calendar-weekday">火</div>
+                    <div class="calendar-weekday">水</div>
+                    <div class="calendar-weekday">木</div>
+                    <div class="calendar-weekday">金</div>
+                    <div class="calendar-weekday">土</div>
+
+                    <div class="calendar-day type-d">1</div>
+                    <div class="calendar-day type-c">2</div>
+                    <div class="calendar-day type-c">3</div>
+                    <div class="calendar-day type-c">4</div>
+                    <div class="calendar-day type-c">5</div>
+                    <div class="calendar-day type-c">6</div>
+                    <div class="calendar-day type-d">7</div>
+
+                    <div class="calendar-day type-d">8</div>
+                    <div class="calendar-day type-c">9</div>
+                    <div class="calendar-day type-c">10</div>
+                    <div class="calendar-day type-c">11</div>
+                    <div class="calendar-day type-c">12</div>
+                    <div class="calendar-day type-c">13</div>
+                    <div class="calendar-day type-d">14</div>
+
+                    <div class="calendar-day type-d">15</div>
+                    <div class="calendar-day type-c">16</div>
+                    <div class="calendar-day type-c">17</div>
+                    <div class="calendar-day type-c">18</div>
+                    <div class="calendar-day type-c">19</div>
+                    <div class="calendar-day type-c">20</div>
+                    <div class="calendar-day type-d">21</div>
+
+                    <div class="calendar-day type-d">22</div>
+                    <div class="calendar-day type-c">23</div>
+                    <div class="calendar-day type-c">24</div>
+                    <div class="calendar-day type-c">25</div>
+                    <div class="calendar-day type-c">26</div>
+                    <div class="calendar-day type-c">27</div>
+                    <div class="calendar-day type-d">28</div>
+                </div>
+            </div>
+
+            <!-- 2026年3月 -->
+            <div class="calendar-month">
+                <h3 class="month-title">2026年3月</h3>
+                <div class="calendar-grid">
+                    <div class="calendar-weekday">日</div>
+                    <div class="calendar-weekday">月</div>
+                    <div class="calendar-weekday">火</div>
+                    <div class="calendar-weekday">水</div>
+                    <div class="calendar-weekday">木</div>
+                    <div class="calendar-weekday">金</div>
+                    <div class="calendar-weekday">土</div>
+
+                    <div class="calendar-day type-d">1</div>
+                    <div class="calendar-day type-c">2</div>
+                    <div class="calendar-day type-c">3</div>
+                    <div class="calendar-day type-c">4</div>
+                    <div class="calendar-day type-c">5</div>
+                    <div class="calendar-day type-c">6</div>
+                    <div class="calendar-day type-d">7</div>
+
+                    <div class="calendar-day type-d">8</div>
+                    <div class="calendar-day type-c">9</div>
+                    <div class="calendar-day type-c">10</div>
+                    <div class="calendar-day type-c">11</div>
+                    <div class="calendar-day type-c">12</div>
+                    <div class="calendar-day type-c">13</div>
+                    <div class="calendar-day type-d">14</div>
+
+                    <div class="calendar-day type-d">15</div>
+                    <div class="calendar-day type-c">16</div>
+                    <div class="calendar-day type-c">17</div>
+                    <div class="calendar-day type-c">18</div>
+                    <div class="calendar-day type-c">19</div>
+                    <div class="calendar-day type-c">20</div>
+                    <div class="calendar-day type-d">21</div>
+
+                    <div class="calendar-day type-d">22</div>
+                    <div class="calendar-day type-b">23</div>
+                    <div class="calendar-day type-b">24</div>
+                    <div class="calendar-day type-b">25</div>
+                    <div class="calendar-day type-b">26</div>
+                    <div class="calendar-day type-b">27</div>
+                    <div class="calendar-day type-b">28</div>
+
+                    <div class="calendar-day type-b">29</div>
+                    <div class="calendar-day type-b">30</div>
+                    <div class="calendar-day type-b">31</div>
+                </div>
+            </div>
+
+            <!-- 2026年4月 -->
+            <div class="calendar-month">
+                <h3 class="month-title">2026年4月</h3>
+                <div class="calendar-grid">
+                    <div class="calendar-weekday">日</div>
+                    <div class="calendar-weekday">月</div>
+                    <div class="calendar-weekday">火</div>
+                    <div class="calendar-weekday">水</div>
+                    <div class="calendar-weekday">木</div>
+                    <div class="calendar-weekday">金</div>
+                    <div class="calendar-weekday">土</div>
+
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day type-b">1</div>
+                    <div class="calendar-day type-b">2</div>
+                    <div class="calendar-day type-b">3</div>
+                    <div class="calendar-day type-b">4</div>
+
+                    <div class="calendar-day type-b">5</div>
+                    <div class="calendar-day closed">6</div>
+                    <div class="calendar-day closed">7</div>
+                    <div class="calendar-day closed">8</div>
+                    <div class="calendar-day closed">9</div>
+                    <div class="calendar-day closed">10</div>
+                    <div class="calendar-day closed">11</div>
+
+                    <div class="calendar-day closed">12</div>
+                    <div class="calendar-day closed">13</div>
+                    <div class="calendar-day closed">14</div>
+                    <div class="calendar-day closed">15</div>
+                    <div class="calendar-day closed">16</div>
+                    <div class="calendar-day closed">17</div>
+                    <div class="calendar-day closed">18</div>
+
+                    <div class="calendar-day closed">19</div>
+                    <div class="calendar-day closed">20</div>
+                    <div class="calendar-day closed">21</div>
+                    <div class="calendar-day closed">22</div>
+                    <div class="calendar-day closed">23</div>
+                    <div class="calendar-day closed">24</div>
+                    <div class="calendar-day closed">25</div>
+
+                    <div class="calendar-day closed">26</div>
+                    <div class="calendar-day closed">27</div>
+                    <div class="calendar-day closed">28</div>
+                    <div class="calendar-day closed">29</div>
+                    <div class="calendar-day closed">30</div>
+                </div>
+                <p class="season-end-note">※4月7日以降はシーズン終了のため休業いたします</p>
+            </div>
+
+            <div class="calendar-notes">
+                <h3>ご注意事項</h3>
+                <ul>
+                    <li>営業日・営業時間は天候や雪の状況により変更される場合がございます。</li>
+                    <li>年末年始（12/28〜1/3）は特別営業時間となります（7:00 - 18:00）。</li>
+                    <li>最新の営業状況は電話またはウェブサイトでご確認ください。</li>
+                    <li>予約優先となりますので、事前のご予約をおすすめいたします。</li>
+                </ul>
+            </div>
+
+            <div class="calendar-cta">
+                <a href="#reservation" class="btn-reservation">今すぐ予約する</a>
+                <a href="index.html" class="btn-back">TOPページへ戻る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 右下固定予約ボタン -->
+    <a href="#reservation" class="btn-floating-reservation" id="floatingReservation">
+        <span class="btn-floating-icon">📅</span>
+        <span class="btn-floating-text">予約する</span>
+    </a>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>RENTAL AAA</h3>
+                    <p>〒501-5303 岐阜県郡上市高鷲町大鷲2409-7</p>
+                    <p>TEL: 0575-72-0125</p>
+                    <p>営業時間: 平日 5:00 - 18:00 休日 2:00 - 18:30</p>
+                </div>
+                <div class="footer-links">
+                    <h4>メニュー</h4>
+                    <ul>
+                        <li><a href="index.html#about">ABOUT</a></li>
+                        <li><a href="pricing-detail.html">レンタル料金</a></li>
+                        <li><a href="index.html#access">アクセス</a></li>
+                        <li><a href="news.html">NEWS&BLOG</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025-2026 RENTAL AAA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

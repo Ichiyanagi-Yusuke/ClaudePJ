@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENTAL AAA - スキー・スノーボードレンタル</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="header-logo.png" alt="RENTAL AAA" class="logo-image">
+            </a>
+
+            <!-- ハンバーガーメニューボタン -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- サイドメニュー -->
+    <div class="side-menu" id="sideMenu">
+        <div class="side-menu-close" id="closeMenu">&times;</div>
+        <ul class="side-menu-list">
+            <li><a href="#about" class="side-menu-link">ABOUT</a></li>
+            <li><a href="pricing-detail.html" class="side-menu-link">レンタル料金</a></li>
+            <li><a href="#access" class="side-menu-link">アクセス</a></li>
+            <li><a href="calendar.html" class="side-menu-link">営業日カレンダー</a></li>
+            <li><a href="news.html" class="side-menu-link">NEWS&BLOG</a></li>
+        </ul>
+        <!-- メニュー内予約ボタン -->
+        <div class="side-menu-reservation">
+            <a href="#reservation" class="btn-side-reservation">予約する</a>
+        </div>
+    </div>
+
+    <!-- オーバーレイ -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ヒーローセクション（TOPビュー） -->
+    <section id="home" class="hero">
+        <!-- 背景スライドショー -->
+        <div class="hero-slideshow">
+            <div class="hero-slide" style="background-image: url('top-view-1.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('top-view-2.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('top-view-3.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('top-view-4.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('top-view-5.jpg');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="topview-logo.png" alt="RENTAL AAA" class="hero-logo-image">
+            <!-- <p class="hero-catchphrase">最高の雪山体験を、<br>最高の装備で。</p> -->
+        </div>
+
+        <!-- スクロールライン -->
+        <a href="#about" class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">SCROLL</span>
+        </a>
+    </section>
+
+    <!-- ABOUTセクション -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">ABOUT</span>
+                <h2 class="section-title">私たちについて</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>最高のアイテムとお客様に寄り添った充実のサポート。</p>
+                    <p>1997年から現在まで創業55年の実績。熟練のスタッフが親切かつ丁寧なサービスでお客様のスキー、スノーボードライフをしっかりとフルサポート致します！</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-image">
+                                <img src="feature-1.jpg" alt="最新モデル">
+                            </div>
+                            <div class="feature-content">
+                                <h3>最新モデル</h3>
+                                <p>毎シーズン最新の用具を導入</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-image">
+                                <img src="feature-2.jpg" alt="豊富な在庫">
+                            </div>
+                            <div class="feature-content">
+                                <h3>豊富な在庫</h3>
+                                <p>幅広いサイズとレベルに対応</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-image">
+                                <img src="feature-3.jpg" alt="万全のメンテナンス">
+                            </div>
+                            <div class="feature-content">
+                                <h3>万全のメンテナンス</h3>
+                                <p>常に最高のコンディションで</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- レンタル料金セクション -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">RENTAL PRICING</span>
+                <h2 class="section-title">レンタル料金</h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>スキーセット</h3>
+                        <div class="pricing-badge">人気</div>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price">
+                            <span class="price-amount">¥3,500</span>
+                            <span class="price-period">/日</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>スキー板</li>
+                            <li>ブーツ</li>
+                            <li>ストック</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3>スノーボードセット</h3>
+                        <div class="pricing-badge">おすすめ</div>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price">
+                            <span class="price-amount">¥3,500</span>
+                            <span class="price-period">/日</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>スノーボード</li>
+                            <li>ブーツ</li>
+                            <li>バインディング調整</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>ウェア（上下）</h3>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price">
+                            <span class="price-amount">¥3,000</span>
+                            <span class="price-period">/日</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>ジャケット</li>
+                            <li>パンツ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-detail-link">
+                <a href="pricing-detail.html" class="btn-pricing-detail">レンタル料金詳細はこちら</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- アクセスセクション -->
+    <section id="access" class="access">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">ACCESS</span>
+                <h2 class="section-title">アクセス</h2>
+            </div>
+            <div class="access-content">
+                <div class="access-info">
+                    <h3>店舗情報</h3>
+                    <div class="info-item">
+                        <strong>住所</strong>
+                        <p>〒501-5303 岐阜県郡上市高鷲町大鷲2409-7</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>営業時間</strong>
+                        <p>8:00 - 17:00（シーズン中無休）</p>
+                        <a href="calendar.html" class="btn-calendar">営業日カレンダーを見る</a>
+                    </div>
+                    <div class="info-item">
+                        <strong>電話番号</strong>
+                        <p>0575-72-0125</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>アクセス</strong>
+                        <p>・高鷲スノーパークまで車で15分<br>・ダイナランドまで車で10分<br>・鷲ヶ岳スキー場まで車で8分<br>・ひるがの高原スキー場まで車で15分</p>
+                    </div>
+                </div>
+                <div class="access-map">
+                    <div class="map-placeholder">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3229.989701587518!2d136.8770187765519!3d35.94722187250263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6002891e696cad37%3A0xc883989ea31ddb9d!2z44Os44Oz44K_44OrQUFB!5e0!3m2!1sja!2sjp!4v1764779785377!5m2!1sja!2sjp" 
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWS&BLOGセクション -->
+    <section id="news" class="news">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">NEWS & BLOG</span>
+                <h2 class="section-title">お知らせ＆ブログ</h2>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image"></div>
+                    <div class="news-content">
+                        <span class="news-date">2024.12.01</span>
+                        <span class="news-category">お知らせ</span>
+                        <h3>今シーズンの営業を開始しました</h3>
+                        <p>2024-2025シーズンの営業を開始いたしました。今シーズンも最新モデルを多数取り揃えております。</p>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image"></div>
+                    <div class="news-content">
+                        <span class="news-date">2024.11.20</span>
+                        <span class="news-category">ブログ</span>
+                        <h3>初心者向け：スキー板の選び方</h3>
+                        <p>初めてスキーをされる方向けに、板の選び方のポイントをご紹介します。</p>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image"></div>
+                    <div class="news-content">
+                        <span class="news-date">2024.11.15</span>
+                        <span class="news-category">お知らせ</span>
+                        <h3>オンライン予約受付開始</h3>
+                        <p>待望のオンライン予約システムがスタート。事前予約でスムーズにレンタルいただけます。</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 予約CTAセクション -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>今すぐ予約して、<br>最高のスノーシーズンを。</h2>
+            <a href="#reservation" class="btn-reservation">オンライン予約</a>
+        </div>
+    </section>
+
+    <!-- 右下固定予約ボタン -->
+    <a href="#reservation" class="btn-floating-reservation" id="floatingReservation">
+        <span class="btn-floating-icon">📅</span>
+        <span class="btn-floating-text">予約する</span>
+    </a>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>RENTAL AAA</h3>
+                    <p>〒501-5303 岐阜県郡上市高鷲町大鷲2409-7</p>
+                    <p>TEL: 0575-72-0125</p>
+                    <p>営業時間: 平日 5:00 - 18:00 休日 2:00 - 18:30</p>
+                </div>
+                <div class="footer-links">
+                    <h4>メニュー</h4>
+                    <ul>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#pricing">レンタル料金</a></li>
+                        <li><a href="#access">アクセス</a></li>
+                        <li><a href="#news">NEWS&BLOG</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025-2026 RENTAL AAA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

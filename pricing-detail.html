@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レンタル料金 - RENTAL AAA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="header-logo.png" alt="RENTAL AAA" class="logo-image">
+            </a>
+
+            <!-- ハンバーガーメニューボタン -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- サイドメニュー -->
+    <div class="side-menu" id="sideMenu">
+        <div class="side-menu-close" id="closeMenu">&times;</div>
+        <ul class="side-menu-list">
+            <li><a href="index.html#about" class="side-menu-link">ABOUT</a></li>
+            <li><a href="pricing-detail.html" class="side-menu-link">レンタル料金</a></li>
+            <li><a href="index.html#access" class="side-menu-link">アクセス</a></li>
+            <li><a href="calendar.html" class="side-menu-link">営業日カレンダー</a></li>
+            <li><a href="news.html" class="side-menu-link">NEWS&BLOG</a></li>
+        </ul>
+        <!-- メニュー内予約ボタン -->
+        <div class="side-menu-reservation">
+            <a href="#reservation" class="btn-side-reservation">予約する</a>
+        </div>
+    </div>
+
+    <!-- オーバーレイ -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ページヘッダー -->
+    <section class="page-header">
+        <div class="container">
+            <h1>レンタル料金</h1>
+            <p>Rental Pricing</p>
+        </div>
+    </section>
+
+    <!-- 料金表セクション -->
+    <section class="pricing-detail-section">
+        <div class="container">
+            <!-- セットレンタル -->
+            <div class="pricing-category">
+                <h2 class="category-title">
+                    <span class="title-icon">⛷️</span>
+                    セットレンタル
+                </h2>
+                <p class="category-description">初めての方や手ぶらで楽しみたい方におすすめのセットプランです。</p>
+
+                <div class="price-table-wrapper">
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th class="item-name">商品名</th>
+                                <th class="price-col">1日料金</th>
+                                <th class="price-col">2日料金</th>
+                                <th class="price-col">3日料金</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="featured-row">
+                                <td class="item-name">
+                                    <strong>バートンボードセット</strong>
+                                    <span class="item-badge premium">プレミアム</span>
+                                    <p class="item-description">ボード・ブーツ・バインディング</p>
+                                </td>
+                                <td class="price-col">¥4,000</td>
+                                <td class="price-col">¥7,500</td>
+                                <td class="price-col">¥11,000</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">
+                                    <strong>スノーボードセット</strong>
+                                    <span class="item-badge popular">人気</span>
+                                    <p class="item-description">ボード・ブーツ・バインディング</p>
+                                </td>
+                                <td class="price-col">¥3,500</td>
+                                <td class="price-col">¥6,500</td>
+                                <td class="price-col">¥9,500</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">
+                                    <strong>スキーセット</strong>
+                                    <span class="item-badge popular">人気</span>
+                                    <p class="item-description">スキー・ブーツ・ストック</p>
+                                </td>
+                                <td class="price-col">¥3,500</td>
+                                <td class="price-col">¥6,500</td>
+                                <td class="price-col">¥9,500</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">
+                                    <strong>ショートスキーセット</strong>
+                                    <p class="item-description">ショートスキー・ブーツ・ストック</p>
+                                </td>
+                                <td class="price-col">¥3,500</td>
+                                <td class="price-col">¥6,500</td>
+                                <td class="price-col">¥9,500</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">
+                                    <strong>ウエア（上下）</strong>
+                                    <p class="item-description">ジャケット・パンツ</p>
+                                </td>
+                                <td class="price-col">¥3,000</td>
+                                <td class="price-col">¥5,500</td>
+                                <td class="price-col">¥8,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ジュニアセット -->
+                <h3 class="subcategory-title">ジュニア向けセット</h3>
+                <div class="price-table-wrapper">
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th class="item-name">商品名</th>
+                                <th class="price-col">1日料金</th>
+                                <th class="price-col">2日料金</th>
+                                <th class="price-col">3日料金</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="item-name">
+                                    <strong>Jr.ボードセット</strong>
+                                    <p class="item-description">ボード・ブーツ・バインディング</p>
+                                </td>
+                                <td class="price-col">¥3,000</td>
+                                <td class="price-col">¥5,500</td>
+                                <td class="price-col">¥8,000</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">
+                                    <strong>Jr.スキーセット</strong>
+                                    <p class="item-description">スキー・ブーツ・ストック</p>
+                                </td>
+                                <td class="price-col">¥3,000</td>
+                                <td class="price-col">¥5,500</td>
+                                <td class="price-col">¥8,000</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">
+                                    <strong>Jr.ウエア（上下）</strong>
+                                    <p class="item-description">ジャケット・パンツ</p>
+                                </td>
+                                <td class="price-col">¥2,500</td>
+                                <td class="price-col">¥4,500</td>
+                                <td class="price-col">¥6,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 単品レンタル -->
+            <div class="pricing-category">
+                <h2 class="category-title">
+                    <span class="title-icon">🎿</span>
+                    単品レンタル
+                </h2>
+                <p class="category-description">お持ちの装備と組み合わせて、必要なアイテムだけレンタルできます。</p>
+
+                <div class="price-table-wrapper">
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th class="item-name">商品名</th>
+                                <th class="price-col">1日料金</th>
+                                <th class="price-col">2日料金</th>
+                                <th class="price-col">3日料金</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="category-header">
+                                <td colspan="4">スノーボード</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">
+                                    <strong>バートンボード</strong>
+                                    <span class="item-badge premium">プレミアム</span>
+                                </td>
+                                <td class="price-col">¥3,000</td>
+                                <td class="price-col">¥5,500</td>
+                                <td class="price-col">¥8,000</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name"><strong>スノーボード</strong></td>
+                                <td class="price-col">¥2,500</td>
+                                <td class="price-col">¥4,500</td>
+                                <td class="price-col">¥7,500</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name"><strong>ボードブーツ</strong></td>
+                                <td class="price-col">¥2,000</td>
+                                <td class="price-col">¥3,500</td>
+                                <td class="price-col">¥5,000</td>
+                            </tr>
+
+                            <tr class="category-header">
+                                <td colspan="4">スキー</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name"><strong>スキー</strong></td>
+                                <td class="price-col">¥2,500</td>
+                                <td class="price-col">¥4,500</td>
+                                <td class="price-col">¥7,500</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name"><strong>スキー＆ストック</strong></td>
+                                <td class="price-col">¥2,500</td>
+                                <td class="price-col">¥4,500</td>
+                                <td class="price-col">¥7,500</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name"><strong>ショートスキー</strong></td>
+                                <td class="price-col">¥2,500</td>
+                                <td class="price-col">¥4,500</td>
+                                <td class="price-col">¥7,500</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name"><strong>スキーブーツ</strong></td>
+                                <td class="price-col">¥2,000</td>
+                                <td class="price-col">¥3,500</td>
+                                <td class="price-col">¥5,000</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name"><strong>ストック</strong></td>
+                                <td class="price-col">¥300</td>
+                                <td class="price-col">¥500</td>
+                                <td class="price-col">¥800</td>
+                            </tr>
+
+                            <tr class="category-header">
+                                <td colspan="4">ウエア</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name"><strong>ウエア単品</strong></td>
+                                <td class="price-col">¥2,000</td>
+                                <td class="price-col">¥3,500</td>
+                                <td class="price-col">¥5,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ジュニア単品 -->
+                <h3 class="subcategory-title">ジュニア向け単品</h3>
+                <div class="price-table-wrapper">
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th class="item-name">商品名</th>
+                                <th class="price-col">1日料金</th>
+                                <th class="price-col">2日料金</th>
+                                <th class="price-col">3日料金</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="item-name"><strong>Jr.スノーボード</strong></td>
+                                <td class="price-col">¥2,000</td>
+                                <td class="price-col">¥3,500</td>
+                                <td class="price-col">¥5,000</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name"><strong>Jr.スキー</strong></td>
+                                <td class="price-col">¥2,000</td>
+                                <td class="price-col">¥3,500</td>
+                                <td class="price-col">¥5,000</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name"><strong>Jr.スキー＆ストック</strong></td>
+                                <td class="price-col">¥2,000</td>
+                                <td class="price-col">¥3,500</td>
+                                <td class="price-col">¥5,000</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name"><strong>Jr.ボードブーツ</strong></td>
+                                <td class="price-col">¥1,500</td>
+                                <td class="price-col">¥2,500</td>
+                                <td class="price-col">¥3,500</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name"><strong>Jr.スキーブーツ</strong></td>
+                                <td class="price-col">¥1,500</td>
+                                <td class="price-col">¥2,500</td>
+                                <td class="price-col">¥3,500</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name"><strong>Jr.ウエア単品</strong></td>
+                                <td class="price-col">¥1,500</td>
+                                <td class="price-col">¥2,500</td>
+                                <td class="price-col">¥3,500</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name"><strong>Jr.ストック</strong></td>
+                                <td class="price-col">¥300</td>
+                                <td class="price-col">¥500</td>
+                                <td class="price-col">¥800</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 料金に関する注意事項 -->
+            <div class="pricing-notes">
+                <h3>料金に関するご案内</h3>
+                <div class="notes-grid">
+                    <div class="note-item">
+                        <h4>📝 レンタル期間について</h4>
+                        <p>営業時間内（8:00-17:00）での貸出・返却となります。1日レンタルは当日のみ、2日以上のレンタルは連続した日数でのご利用となります。</p>
+                    </div>
+                    <div class="note-item">
+                        <h4>💳 お支払い方法</h4>
+                        <p>現金、各種クレジットカード、電子マネーがご利用いただけます。</p>
+                    </div>
+                    <div class="note-item">
+                        <h4>🆔 身分証明書</h4>
+                        <p>レンタルの際には身分証明書（運転免許証、保険証等）のご提示をお願いしております。</p>
+                    </div>
+                    <div class="note-item">
+                        <h4>📞 事前予約</h4>
+                        <p>混雑時の待ち時間短縮のため、事前予約をおすすめしております。予約優先でご案内いたします。</p>
+                    </div>
+                    <div class="note-item">
+                        <h4>🔧 無料サービス</h4>
+                        <p>レンタル期間中のワックスがけ、エッジ調整などのメンテナンスは無料で承ります。</p>
+                    </div>
+                    <div class="note-item">
+                        <h4>⚠️ キャンセルについて</h4>
+                        <p>予約のキャンセルは前日17:00まで無料です。当日キャンセルの場合、キャンセル料が発生する場合がございます。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="pricing-cta">
+                <h2>ご予約はこちらから</h2>
+                <p>オンライン予約で待ち時間なしでレンタルできます</p>
+                <a href="#reservation" class="btn-reservation">今すぐ予約する</a>
+                <a href="index.html" class="btn-back">TOPページへ戻る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 右下固定予約ボタン -->
+    <a href="#reservation" class="btn-floating-reservation" id="floatingReservation">
+        <span class="btn-floating-icon">📅</span>
+        <span class="btn-floating-text">予約する</span>
+    </a>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>RENTAL AAA</h3>
+                    <p>〒501-5303 岐阜県郡上市高鷲町大鷲2409-7</p>
+                    <p>TEL: 0575-72-0125</p>
+                    <p>営業時間: 平日 5:00 - 18:00 休日 2:00 - 18:30</p>
+                </div>
+                <div class="footer-links">
+                    <h4>メニュー</h4>
+                    <ul>
+                        <li><a href="index.html#about">ABOUT</a></li>
+                        <li><a href="pricing-detail.html">レンタル料金</a></li>
+                        <li><a href="index.html#access">アクセス</a></li>
+                        <li><a href="news.html">NEWS&BLOG</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025-2026 RENTAL AAA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWS&BLOG - RENTAL AAA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="header-logo.png" alt="RENTAL AAA" class="logo-image">
+            </a>
+
+            <!-- ハンバーガーメニューボタン -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- サイドメニュー -->
+    <div class="side-menu" id="sideMenu">
+        <div class="side-menu-close" id="closeMenu">&times;</div>
+        <ul class="side-menu-list">
+            <li><a href="index.html#about" class="side-menu-link">ABOUT</a></li>
+            <li><a href="pricing-detail.html" class="side-menu-link">レンタル料金</a></li>
+            <li><a href="index.html#access" class="side-menu-link">アクセス</a></li>
+            <li><a href="calendar.html" class="side-menu-link">営業日カレンダー</a></li>
+            <li><a href="news.html" class="side-menu-link">NEWS&BLOG</a></li>
+        </ul>
+        <!-- メニュー内予約ボタン -->
+        <div class="side-menu-reservation">
+            <a href="#reservation" class="btn-side-reservation">予約する</a>
+        </div>
+    </div>
+
+    <!-- オーバーレイ -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ページヘッダー -->
+    <section class="page-header">
+        <div class="container">
+            <h1>NEWS & BLOG</h1>
+            <p>お知らせとブログ</p>
+        </div>
+    </section>
+
+    <!-- カテゴリーフィルター -->
+    <section class="news-filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">すべて</button>
+                <button class="filter-btn" data-category="news">お知らせ</button>
+                <button class="filter-btn" data-category="blog">ブログ</button>
+                <button class="filter-btn" data-category="event">イベント</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ニュース一覧 -->
+    <section class="news-list-section">
+        <div class="container">
+            <div class="news-list">
+                <!-- 記事1 -->
+                <article class="news-list-item" data-category="news">
+                    <div class="news-list-image"></div>
+                    <div class="news-list-content">
+                        <div class="news-list-meta">
+                            <span class="news-date">2024.12.01</span>
+                            <span class="news-category-tag news-tag">お知らせ</span>
+                        </div>
+                        <h2 class="news-list-title">2024-2025シーズンの営業を開始しました</h2>
+                        <p class="news-list-excerpt">
+                            2024-2025シーズンの営業を開始いたしました。今シーズンも最新モデルを多数取り揃えており、バートンの最新ボードやサロモンのスキーなど、人気ブランドの新作が充実しています。オンライン予約も受付開始しておりますので、ぜひご利用ください。
+                        </p>
+                        <a href="#" class="news-read-more">続きを読む →</a>
+                    </div>
+                </article>
+
+                <!-- 記事2 -->
+                <article class="news-list-item" data-category="blog">
+                    <div class="news-list-image"></div>
+                    <div class="news-list-content">
+                        <div class="news-list-meta">
+                            <span class="news-date">2024.11.20</span>
+                            <span class="news-category-tag blog-tag">ブログ</span>
+                        </div>
+                        <h2 class="news-list-title">初心者向け：スキー板の選び方完全ガイド</h2>
+                        <p class="news-list-excerpt">
+                            初めてスキーをされる方向けに、板の選び方のポイントをご紹介します。身長、体重、スキルレベルによって最適な板の長さや硬さは異なります。初心者の方は短めで柔らかい板がおすすめです。当店のスタッフがお客様に合った板選びをサポートいたします。
+                        </p>
+                        <a href="#" class="news-read-more">続きを読む →</a>
+                    </div>
+                </article>
+
+                <!-- 記事3 -->
+                <article class="news-list-item" data-category="news">
+                    <div class="news-list-image"></div>
+                    <div class="news-list-content">
+                        <div class="news-list-meta">
+                            <span class="news-date">2024.11.15</span>
+                            <span class="news-category-tag news-tag">お知らせ</span>
+                        </div>
+                        <h2 class="news-list-title">オンライン予約受付開始のお知らせ</h2>
+                        <p class="news-list-excerpt">
+                            待望のオンライン予約システムがスタートしました。事前予約でスムーズにレンタルいただけます。予約優先でご案内させていただきますので、混雑する週末や年末年始は特に予約をおすすめいたします。
+                        </p>
+                        <a href="#" class="news-read-more">続きを読む →</a>
+                    </div>
+                </article>
+
+                <!-- 記事4 -->
+                <article class="news-list-item" data-category="event">
+                    <div class="news-list-image"></div>
+                    <div class="news-list-content">
+                        <div class="news-list-meta">
+                            <span class="news-date">2024.11.10</span>
+                            <span class="news-category-tag event-tag">イベント</span>
+                        </div>
+                        <h2 class="news-list-title">年末年始キャンペーン実施決定！</h2>
+                        <p class="news-list-excerpt">
+                            12月28日〜1月3日の期間限定で、特別料金キャンペーンを実施いたします。セットレンタルが通常料金より10%OFF！この機会にぜひご利用ください。詳細は店頭またはお電話にてお問い合わせください。
+                        </p>
+                        <a href="#" class="news-read-more">続きを読む →</a>
+                    </div>
+                </article>
+
+                <!-- 記事5 -->
+                <article class="news-list-item" data-category="blog">
+                    <div class="news-list-image"></div>
+                    <div class="news-list-content">
+                        <div class="news-list-meta">
+                            <span class="news-date">2024.11.05</span>
+                            <span class="news-category-tag blog-tag">ブログ</span>
+                        </div>
+                        <h2 class="news-list-title">スノーボード初心者が知っておくべき基本テクニック</h2>
+                        <p class="news-list-excerpt">
+                            スノーボードを始める方に向けて、基本的な滑り方のコツをご紹介します。まずは正しいスタンスの取り方から。前足と後ろ足の角度、重心の置き方など、基本をマスターすることで上達のスピードが格段に上がります。
+                        </p>
+                        <a href="#" class="news-read-more">続きを読む →</a>
+                    </div>
+                </article>
+
+                <!-- 記事6 -->
+                <article class="news-list-item" data-category="blog">
+                    <div class="news-list-image"></div>
+                    <div class="news-list-content">
+                        <div class="news-list-meta">
+                            <span class="news-date">2024.10.28</span>
+                            <span class="news-category-tag blog-tag">ブログ</span>
+                        </div>
+                        <h2 class="news-list-title">ウェアの選び方：機能性とファッション性を両立</h2>
+                        <p class="news-list-excerpt">
+                            スキー・スノーボード用のウェアは防寒・防水性能が重要ですが、同時にファッション性も楽しみたいもの。最新のウェアは機能性とデザイン性を兼ね備えています。当店では人気ブランドのウェアを多数取り揃えております。
+                        </p>
+                        <a href="#" class="news-read-more">続きを読む →</a>
+                    </div>
+                </article>
+
+                <!-- 記事7 -->
+                <article class="news-list-item" data-category="news">
+                    <div class="news-list-image"></div>
+                    <div class="news-list-content">
+                        <div class="news-list-meta">
+                            <span class="news-date">2024.10.20</span>
+                            <span class="news-category-tag news-tag">お知らせ</span>
+                        </div>
+                        <h2 class="news-list-title">今シーズンの新商品入荷情報</h2>
+                        <p class="news-list-excerpt">
+                            2024-2025シーズンの新商品が続々入荷しております。バートンの最新ボード、サロモンの新作スキー、そして人気のウェアブランドの新作など、最新アイテムを取り揃えています。ぜひ店頭でご覧ください。
+                        </p>
+                        <a href="#" class="news-read-more">続きを読む →</a>
+                    </div>
+                </article>
+
+                <!-- 記事8 -->
+                <article class="news-list-item" data-category="blog">
+                    <div class="news-list-image"></div>
+                    <div class="news-list-content">
+                        <div class="news-list-meta">
+                            <span class="news-date">2024.10.15</span>
+                            <span class="news-category-tag blog-tag">ブログ</span>
+                        </div>
+                        <h2 class="news-list-title">ゲレンデでの安全対策：事故を防ぐために</h2>
+                        <p class="news-list-excerpt">
+                            楽しいウィンタースポーツですが、安全対策は欠かせません。ヘルメットの着用、スピードの出し過ぎに注意、他のスキーヤー・スノーボーダーとの距離の保持など、基本的な安全ルールを守って楽しみましょう。
+                        </p>
+                        <a href="#" class="news-read-more">続きを読む →</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- ページネーション -->
+            <div class="pagination">
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn">次へ →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="news-cta">
+        <div class="container">
+            <h2>ご予約・お問い合わせ</h2>
+            <p>レンタルのご予約やご質問はお気軽にどうぞ</p>
+            <div class="cta-buttons">
+                <a href="#reservation" class="btn-reservation">オンライン予約</a>
+                <a href="index.html" class="btn-back">TOPページへ戻る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 右下固定予約ボタン -->
+    <a href="#reservation" class="btn-floating-reservation" id="floatingReservation">
+        <span class="btn-floating-icon">📅</span>
+        <span class="btn-floating-text">予約する</span>
+    </a>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>RENTAL AAA</h3>
+                    <p>〒501-5303 岐阜県郡上市高鷲町大鷲2409-7</p>
+                    <p>TEL: 0575-72-0125</p>
+                    <p>営業時間: 平日 5:00 - 18:00 休日 2:00 - 18:30</p>
+                </div>
+                <div class="footer-links">
+                    <h4>メニュー</h4>
+                    <ul>
+                        <li><a href="index.html#about">ABOUT</a></li>
+                        <li><a href="pricing-detail.html">レンタル料金</a></li>
+                        <li><a href="index.html#access">アクセス</a></li>
+                        <li><a href="news.html">NEWS&BLOG</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025-2026 RENTAL AAA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // ニュースフィルター機能
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const newsItems = document.querySelectorAll('.news-list-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // ボタンのアクティブ状態を切り替え
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const category = btn.getAttribute('data-category');
+
+                    // 記事の表示/非表示を切り替え
+                    newsItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'flex';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
