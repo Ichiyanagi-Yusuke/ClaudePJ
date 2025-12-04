@@ -10,6 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- ローディング画面 -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="topview-logo.png" alt="RENTAL AAA">
+            </div>
+            <div class="loading-spinner">
+                <div class="spinner-bar"></div>
+                <div class="spinner-bar"></div>
+                <div class="spinner-bar"></div>
+            </div>
+            <p class="loading-text">Loading...</p>
+        </div>
+    </div>
+
     <!-- ナビゲーション -->
     <nav class="navbar">
         <div class="nav-container">
@@ -31,10 +46,10 @@
         <div class="side-menu-close" id="closeMenu">&times;</div>
         <ul class="side-menu-list">
             <li><a href="#about" class="side-menu-link">ABOUT</a></li>
-            <li><a href="pricing-detail.html" class="side-menu-link">レンタル料金</a></li>
-            <li><a href="#access" class="side-menu-link">アクセス</a></li>
-            <li><a href="calendar.html" class="side-menu-link">営業日カレンダー</a></li>
-            <li><a href="news.html" class="side-menu-link">NEWS&BLOG</a></li>
+            <li><a href="pricing-detail.html" class="side-menu-link">RENTAL PRICE</a></li>
+            <li><a href="#access" class="side-menu-link">ACCESS</a></li>
+            <li><a href="calendar.html" class="side-menu-link">OPEN CALENDAR</a></li>
+            <li><a href="news.html" class="side-menu-link">NEWS & BLOG</a></li>
         </ul>
         <!-- メニュー内予約ボタン -->
         <div class="side-menu-reservation">
@@ -82,29 +97,29 @@
                     <div class="about-features">
                         <div class="feature-item">
                             <div class="feature-image">
-                                <img src="feature-1.jpg" alt="最新モデル">
+                                <img src="top_about_stepon.jpg" alt="BURTON STEP ON">
                             </div>
                             <div class="feature-content">
-                                <h3>最新モデル</h3>
-                                <p>毎シーズン最新の用具を導入</p>
+                                <h3>BURTON STEP ON</h3>
+                                <p>ワンタッチ着脱で快適な最高なスノー体験を。</p>
                             </div>
                         </div>
                         <div class="feature-item">
                             <div class="feature-image">
-                                <img src="feature-2.jpg" alt="豊富な在庫">
-                            </div>
-                            <div class="feature-content">
-                                <h3>豊富な在庫</h3>
-                                <p>幅広いサイズとレベルに対応</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-image">
-                                <img src="feature-3.jpg" alt="万全のメンテナンス">
+                                <img src="top_about_mente.jpg" alt="万全のメンテナンス">
                             </div>
                             <div class="feature-content">
                                 <h3>万全のメンテナンス</h3>
-                                <p>常に最高のコンディションで</p>
+                                <p>熟練のスタッフが日々丁寧なメンテナンスを</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-image">
+                                <img src="top_about_lineup.jpg" alt="最新モデルも充実">
+                            </div>
+                            <div class="feature-content">
+                                <h3>最新モデルも充実</h3>
+                                <p>初心者から上級者まで満足のラインナップ</p>
                             </div>
                         </div>
                     </div>
@@ -159,16 +174,18 @@
 
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>ウェア（上下）</h3>
+                        <h3>BURTON STEP ONセット</h3>
+                        <div class="pricing-badge">最新</div>
                     </div>
                     <div class="pricing-body">
                         <div class="price">
-                            <span class="price-amount">¥3,000</span>
+                            <span class="price-amount">¥4,500</span>
                             <span class="price-period">/日</span>
                         </div>
                         <ul class="pricing-features">
-                            <li>ジャケット</li>
-                            <li>パンツ</li>
+                            <li>スノーボード</li>
+                            <li>ブーツ</li>
+                            <li>STEP ON バインディング</li>
                         </ul>
                     </div>
                 </div>
@@ -286,9 +303,9 @@
                     <h4>メニュー</h4>
                     <ul>
                         <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#pricing">レンタル料金</a></li>
-                        <li><a href="#access">アクセス</a></li>
-                        <li><a href="#news">NEWS&BLOG</a></li>
+                        <li><a href="#pricing">RENTAL PRICE</a></li>
+                        <li><a href="#access">ACCESS</a></li>
+                        <li><a href="#news">NEWS & BLOG</a></li>
                     </ul>
                 </div>
             </div>
