@@ -295,11 +295,22 @@ body {
     color: var(--black);
     text-decoration: none;
     transition: all 0.3s ease;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
     position: relative;
 }
 
-.side-menu-link::after {
+.menu-main {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.menu-main::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -310,12 +321,30 @@ body {
     transition: width 0.3s ease;
 }
 
+.menu-sub {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-gray);
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.5px;
+    margin-left: 0.2rem;
+    transition: color 0.3s ease;
+}
+
 .side-menu-link:hover {
     color: var(--primary-red);
 }
 
-.side-menu-link:hover::after {
+.side-menu-link:hover .menu-main {
+    color: var(--primary-red);
+}
+
+.side-menu-link:hover .menu-main::after {
     width: 100%;
+}
+
+.side-menu-link:hover .menu-sub {
+    color: var(--primary-red);
 }
 
 /* サイドメニュー内予約ボタン */
@@ -329,6 +358,7 @@ body {
     display: block;
     width: 100%;
     padding: 1.2rem 2rem;
+    padding-right: 3rem;
     background: var(--primary-red);
     color: var(--white);
     text-decoration: none;
@@ -337,12 +367,29 @@ body {
     font-weight: 600;
     text-align: center;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-side-reservation::after {
+    content: '▶︎';
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
 }
 
 .btn-side-reservation:hover {
     background: var(--dark-red);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.btn-side-reservation:hover::after {
+    right: 1.2rem;
+    animation: arrowSlide 0.6s ease-in-out infinite;
 }
 
 /* オーバーレイ */
@@ -591,23 +638,26 @@ section {
 }
 
 .section-label {
-    display: inline-block;
-    padding: 0.5rem 1.5rem;
-    background: var(--light-gray);
-    border-left: 4px solid var(--primary-red);
-    border-radius: 0;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: var(--black);
-    margin-bottom: 1rem;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-gray);
+    margin-top: 0.5rem;
+    letter-spacing: 0.5px;
 }
 
 .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 4rem;
+    font-weight: 900;
+    font-family: 'Oswald', sans-serif;
     color: var(--black);
-    margin-top: 1rem;
+    letter-spacing: 4px;
+    margin: 0;
+    line-height: 1.1;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+    border-bottom: 4px solid var(--primary-red);
+    display: inline-block;
 }
 
 /* ABOUTセクション */
@@ -623,7 +673,8 @@ section {
 .about-text p {
     font-size: 1.1rem;
     color: var(--text-gray);
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
+    margin: 0 1.6rem 1.5em;
     line-height: 1.8;
 }
 
@@ -640,6 +691,24 @@ section {
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
+    position: relative;
+    border-left: 5px solid var(--primary-red);
+}
+
+.feature-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 5px;
+    height: 0;
+    background: var(--dark-red);
+    transition: height 0.4s ease;
+    z-index: 2;
+}
+
+.feature-item:hover::before {
+    height: 100%;
 }
 
 .feature-item:hover {
@@ -652,6 +721,22 @@ section {
     height: 200px;
     overflow: hidden;
     background: var(--light-gray);
+    position: relative;
+}
+
+.feature-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--primary-red);
+    transition: width 0.4s ease;
+}
+
+.feature-item:hover .feature-image::after {
+    width: 100%;
 }
 
 .feature-image img {
@@ -668,11 +753,24 @@ section {
 .feature-content {
     padding: 1.5rem;
     text-align: center;
+    position: relative;
+}
+
+.feature-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background: var(--primary-red);
 }
 
 .feature-content h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    margin-top: 0.8rem;
     color: var(--black);
 }
 
@@ -696,11 +794,30 @@ section {
 }
 
 .pricing-card {
-    background: var(--white);
+    background: linear-gradient(135deg, var(--white) 0%, #f8f8f8 100%);
     border-radius: 0;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    position: relative;
+    border-top: 4px solid var(--black);
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 0, 0, 0.03) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.pricing-card:hover::before {
+    opacity: 1;
 }
 
 .pricing-card:hover {
@@ -709,25 +826,56 @@ section {
 }
 
 .pricing-card.featured {
-    border: 3px solid var(--primary-red);
+    border-top: 4px solid var(--primary-red);
     transform: scale(1.03);
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+}
+
+.pricing-card.featured::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 60px 60px 0;
+    border-color: transparent var(--primary-red) transparent transparent;
 }
 
 .pricing-header {
-    background: var(--black);
+    background: linear-gradient(135deg, var(--black) 0%, #2a2a2a 100%);
     color: var(--white);
     padding: 1.5rem 1rem;
     text-align: center;
     position: relative;
+    overflow: hidden;
+}
+
+.pricing-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.pricing-card:hover .pricing-header::before {
+    left: 100%;
 }
 
 .pricing-card.featured .pricing-header {
-    background: var(--primary-red);
+    background: linear-gradient(135deg, var(--primary-red) 0%, #c00 100%);
 }
 
 .pricing-header h3 {
     font-size: 1.3rem;
     margin-bottom: 0.4rem;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
 }
 
 .pricing-badge {
@@ -737,31 +885,53 @@ section {
     border-radius: 0;
     font-size: 0.75rem;
     margin-top: 0.3rem;
+    position: relative;
+    z-index: 1;
 }
 
 .pricing-card.featured .pricing-badge {
     background: var(--white);
     color: var(--primary-red);
+    font-weight: 600;
 }
 
 .pricing-body {
     padding: 1.5rem 1rem;
+    position: relative;
+    background: var(--white);
 }
 
 .price {
     text-align: center;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-gray);
+    position: relative;
+}
+
+.price::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: var(--primary-red);
 }
 
 .price-amount {
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--primary-red);
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
 }
 
 .price-period {
     font-size: 1rem;
     color: var(--text-gray);
+    font-weight: 500;
 }
 
 .pricing-features {
@@ -770,10 +940,26 @@ section {
 }
 
 .pricing-features li {
-    padding: 0.6rem 0;
+    padding: 0.7rem 0.5rem;
     border-bottom: 1px solid var(--border-gray);
     color: var(--text-gray);
     font-size: 0.95rem;
+    position: relative;
+    padding-left: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.pricing-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-red);
+    font-weight: bold;
+}
+
+.pricing-features li:hover {
+    padding-left: 1.8rem;
+    color: var(--black);
 }
 
 .pricing-features li:last-child {
@@ -788,6 +974,7 @@ section {
 .btn-pricing-detail {
     display: inline-block;
     padding: 1.2rem 3rem;
+    padding-right: 3.5rem;
     background: var(--primary-red);
     color: var(--white);
     text-decoration: none;
@@ -795,12 +982,38 @@ section {
     font-size: 1.1rem;
     font-weight: 600;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-pricing-detail::after {
+    content: '▶︎';
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
 }
 
 .btn-pricing-detail:hover {
     background: var(--dark-red);
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+}
+
+.btn-pricing-detail:hover::after {
+    right: 1.2rem;
+    animation: arrowSlide 0.6s ease-in-out infinite;
+}
+
+@keyframes arrowSlide {
+    0%, 100% {
+        transform: translateY(-50%) translateX(0);
+    }
+    50% {
+        transform: translateY(-50%) translateX(5px);
+    }
 }
 
 /* アクセスセクション */
@@ -812,7 +1025,15 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    align-items: start;
+    align-items: stretch;
+}
+
+.access-info {
+    display: flex;
+    flex-direction: column;
+    background: var(--light-gray);
+    padding: 2.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .access-info h3 {
@@ -821,13 +1042,22 @@ section {
     color: var(--black);
 }
 
+.access-info-tips {
+    font-size: 0.7rem !important;
+}
+
 .info-item {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
 }
 
 .info-item strong {
     display: block;
     font-size: 1.1rem;
+    font-weight: 700;
     color: var(--black);
     margin-bottom: 0.5rem;
 }
@@ -835,13 +1065,15 @@ section {
 .info-item p {
     color: var(--text-gray);
     line-height: 1.8;
+    font-size: 1rem;
 }
 
 .access-map {
     background: var(--light-gray);
     border-radius: 0;
     overflow: hidden;
-    height: 400px;
+    height: 100%;
+    min-height: 500px;
 }
 
 .map-placeholder {
@@ -850,8 +1082,11 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    color: var(--text-gray);
+}
+
+.map-placeholder iframe {
+    width: 100%;
+    height: 100%;
 }
 
 /* NEWS&BLOGセクション */
@@ -872,6 +1107,24 @@ section {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     text-decoration: none;
+    position: relative;
+    border-top: 4px solid var(--primary-red);
+}
+
+.news-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--dark-red);
+    transition: width 0.4s ease;
+    z-index: 2;
+}
+
+.news-card:hover::before {
+    width: 100%;
 }
 
 .news-card:hover {
@@ -889,10 +1142,35 @@ section {
     background: linear-gradient(135deg, #e0e0e0 0%, #bdbdbd 100%);
     background-size: cover;
     background-position: center;
+    position: relative;
+}
+
+.news-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 50px 50px 0;
+    border-color: transparent var(--primary-red) transparent transparent;
+    opacity: 0.9;
 }
 
 .news-content {
     padding: 1.5rem;
+    position: relative;
+}
+
+.news-content::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1.5rem;
+    width: 40px;
+    height: 3px;
+    background: var(--primary-red);
 }
 
 .news-date {
@@ -924,21 +1202,60 @@ section {
 
 /* 予約CTAセクション */
 .cta-section {
-    background: var(--black);
+    background: url('cta_bg.jpg') center center;
+    background-size: cover;
+    background-attachment: fixed;
     color: var(--white);
     text-align: center;
-    padding: 5rem 0;
+    padding: 8rem 0;
+    position: relative;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+    z-index: 1;
+}
+
+.cta-section .container {
+    position: relative;
+    z-index: 2;
 }
 
 .cta-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
     line-height: 1.5;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+}
+
+.cta-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary-red);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
 }
 
 .btn-reservation {
     display: inline-block;
     padding: 1.2rem 3rem;
+    padding-right: 3.5rem;
     background: var(--primary-red);
     color: var(--white);
     text-decoration: none;
@@ -946,12 +1263,29 @@ section {
     font-size: 1.2rem;
     font-weight: 600;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-reservation::after {
+    content: '▶︎';
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    transition: all 0.3s ease;
 }
 
 .btn-reservation:hover {
     background: var(--dark-red);
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+}
+
+.btn-reservation:hover::after {
+    right: 1.2rem;
+    animation: arrowSlide 0.6s ease-in-out infinite;
 }
 
 /* フッター */
@@ -1013,6 +1347,11 @@ section {
     font-size: 0.9rem;
 }
 
+.footer-logo-image {
+    width: 40%;
+    margin-bottom: 0.2rem;
+}
+
 /* 右下固定予約ボタン */
 .btn-floating-reservation {
     position: fixed;
@@ -1020,34 +1359,93 @@ section {
     right: 2rem;
     display: flex;
     align-items: center;
-    gap: 0.7rem;
+    gap: 0.8rem;
     padding: 1rem 1.8rem;
-    background: var(--primary-red);
+    background: linear-gradient(135deg, var(--primary-red) 0%, #c00 100%);
     color: var(--white);
     text-decoration: none;
     border-radius: 0;
-    font-weight: 600;
-    font-size: 1rem;
     box-shadow: 0 5px 20px rgba(255, 0, 0, 0.4);
     z-index: 900;
-    transition: all 0.3s ease;
-    animation: fadeInUp 0.6s ease 0.5s both;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: fadeInUp 0.6s ease 0.5s both, floatPulse 3s ease-in-out infinite;
+    overflow: hidden;
+}
+
+.btn-floating-reservation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-floating-reservation:hover::before {
+    left: 100%;
 }
 
 .btn-floating-reservation:hover {
-    background: var(--dark-red);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(255, 0, 0, 0.5);
+    background: linear-gradient(135deg, #c00 0%, var(--primary-red) 100%);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 35px rgba(255, 0, 0, 0.6);
 }
 
 .btn-floating-icon {
     font-size: 1.5rem;
     line-height: 1;
+    animation: iconBounce 2s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.btn-floating-text {
-    font-weight: 600;
+.btn-floating-icon img {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+}
+
+.btn-floating-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    line-height: 1.2;
+}
+
+.btn-floating-main {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn-floating-sub {
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.9;
     letter-spacing: 0.5px;
+}
+
+@keyframes floatPulse {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
 }
 
 /* レスポンシブデザイン */
@@ -1064,6 +1462,26 @@ section {
 
     .about-features {
         grid-template-columns: 1fr;
+        padding: 0 1.5rem;
+        gap: 2.5rem;
+    }
+
+    .feature-item {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .feature-content {
+        padding: 1.2rem;
+    }
+
+    .feature-content p {
+        font-size: 0.85rem;
+        line-height: 1.7;
+    }
+
+    .feature-content h3 {
+        font-size: 1.15rem;
     }
 
     .pricing-grid {
@@ -1099,6 +1517,15 @@ section {
 
     .access-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .access-info {
+        padding: 2rem;
+    }
+
+    .access-map {
+        min-height: 400px;
     }
 
     .news-grid {
@@ -1139,6 +1566,10 @@ section {
         margin-right: 0.5rem;
     }
 
+    .about-text p {
+        font-size: 0.9rem;
+    }
+
     .side-menu {
         width: 100%;
         right: -100%;
@@ -1159,6 +1590,10 @@ section {
         font-size: 1.2rem;
     }
 
+    .btn-reservation::after {
+        right: 0.8rem;
+    }
+
     .scroll-indicator {
         bottom: 2rem;
     }
@@ -1172,7 +1607,12 @@ section {
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+
+    .section-label {
+        font-size: 0.9rem;
     }
 
     .container {
@@ -1216,26 +1656,97 @@ section {
 
     .pricing-features li {
         font-size: 1rem;
-        padding: 0.7rem 0;
+        padding: 0.7rem 0.5rem;
+        padding-left: 1.8rem;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
     }
 
+    .cta-section {
+        padding: 6rem 0;
+        background-attachment: scroll;
+    }
+
     .cta-section h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        margin-bottom: 2.5rem;
+    }
+
+    .cta-section h2::after {
+        width: 60px;
+        height: 3px;
+        bottom: -12px;
     }
 
     .btn-floating-reservation {
         bottom: 1.5rem;
         right: 1.5rem;
         padding: 0.9rem 1.5rem;
-        font-size: 0.95rem;
+        gap: 0.6rem;
     }
 
     .btn-floating-icon {
         font-size: 1.3rem;
+    }
+
+    .btn-floating-main {
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+    }
+
+    .btn-floating-sub {
+        font-size: 0.7rem;
+    }
+
+    .access-info {
+        padding: 1.5rem;
+    }
+
+    .access-info h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .news-grid {
+        padding: 0 1.5rem;
+        gap: 2.5rem;
+    }
+
+    .news-card {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
+    .news-content {
+        padding: 1.2rem;
+    }
+
+    .news-content::before {
+        left: 1.2rem;
+    }
+
+    .news-content p {
+        font-size: 0.85rem;
+        line-height: 1.7;
+    }
+
+    .news-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .info-item {
+        margin-bottom: 1.2rem;
+    }
+
+    .info-item strong {
+        font-size: 1rem;
+    }
+
+    .access-map {
+        min-height: 350px;
     }
 
     .calendar-legend {
@@ -1302,7 +1813,44 @@ section {
     }
 
     .section-title {
-        font-size: 1.7rem;
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+    }
+
+    .section-label {
+        font-size: 0.85rem;
+    }
+
+    .about-features {
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+
+    .feature-item {
+        max-width: 100%;
+    }
+
+    .feature-content {
+        padding: 1rem;
+    }
+
+    .feature-content::before {
+        width: 25px;
+        height: 2.5px;
+    }
+
+    .feature-content p {
+        font-size: 0.8rem;
+        line-height: 1.65;
+    }
+
+    .feature-content h3 {
+        font-size: 1.05rem;
+        margin-top: 0.6rem;
+    }
+
+    .feature-image {
+        height: 180px;
     }
 
     .pricing-grid {
@@ -1323,7 +1871,8 @@ section {
 
     .pricing-features li {
         font-size: 0.95rem;
-        padding: 0.6rem 0;
+        padding: 0.6rem 0.5rem;
+        padding-left: 1.8rem;
     }
 
     .btn-pricing-detail {
@@ -1336,19 +1885,106 @@ section {
         font-size: 1rem;
     }
 
+    .cta-section {
+        padding: 5rem 0;
+    }
+
+    .cta-section h2 {
+        font-size: 1.6rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 2rem;
+    }
+
+    .cta-section h2::after {
+        width: 50px;
+        height: 2.5px;
+        bottom: -10px;
+    }
+
     .btn-floating-reservation {
         bottom: 1rem;
         right: 1rem;
         padding: 0.8rem 1.2rem;
-        font-size: 0.9rem;
+        gap: 0.5rem;
     }
 
     .btn-floating-icon {
         font-size: 1.2rem;
     }
 
-    .btn-floating-text {
+    .btn-floating-main {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+
+    .btn-floating-sub {
+        font-size: 0.65rem;
+    }
+
+    .access-info {
+        padding: 1.2rem;
+    }
+
+    .access-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .info-item {
+        margin-bottom: 1rem;
+    }
+
+    .info-item strong {
+        font-size: 0.95rem;
+    }
+
+    .info-item p {
+        font-size: 0.9rem;
+    }
+
+    .access-map {
+        min-height: 300px;
+    }
+
+    .news-grid {
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+
+    .news-card {
+        max-width: 100%;
+    }
+
+    .news-content {
+        padding: 1rem;
+    }
+
+    .news-content::before {
+        left: 1rem;
+        width: 35px;
+    }
+
+    .news-content p {
+        font-size: 0.8rem;
+        line-height: 1.65;
+    }
+
+    .news-content h3 {
+        font-size: 1rem;
+        margin: 0.8rem 0 0.4rem;
+    }
+
+    .news-date {
         font-size: 0.85rem;
+    }
+
+    .news-category {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.6rem;
+    }
+
+    .news-image::after {
+        border-width: 0 40px 40px 0;
     }
 
     .calendar-legend {
@@ -1417,6 +2053,7 @@ section {
 .btn-back {
     display: inline-block;
     padding: 1rem 2rem;
+    padding-left: 3rem;
     background: var(--white);
     color: var(--black);
     text-decoration: none;
@@ -1425,11 +2062,37 @@ section {
     transition: all 0.3s ease;
     border: 2px solid var(--black);
     margin-left: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-back::before {
+    content: '◀︎';
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
 }
 
 .btn-back:hover {
     background: var(--black);
     color: var(--white);
+}
+
+.btn-back:hover::before {
+    left: 0.9rem;
+    animation: arrowSlideLeft 0.6s ease-in-out infinite;
+}
+
+@keyframes arrowSlideLeft {
+    0%, 100% {
+        transform: translateY(-50%) translateX(0);
+    }
+    50% {
+        transform: translateY(-50%) translateX(-5px);
+    }
 }
 
 /* ===============================
@@ -1651,11 +2314,24 @@ section {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.8rem 1.5rem;
+    padding-right: 2.5rem;
     background: var(--primary-red);
     color: var(--white);
     text-decoration: none;
     border-radius: 0;
     font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-calendar::after {
+    content: '▶︎';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
     transition: all 0.3s ease;
 }
 
@@ -1663,6 +2339,11 @@ section {
     background: var(--dark-red);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.btn-calendar:hover::after {
+    right: 0.7rem;
+    animation: arrowSlide 0.6s ease-in-out infinite;
 }
 
 /* ===============================
