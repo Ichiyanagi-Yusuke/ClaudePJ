@@ -1,3 +1,15 @@
+// ローディング画面の処理
+window.addEventListener('load', function() {
+    const loadingScreen = document.getElementById('loadingScreen');
+
+    // 最小表示時間を設けてスムーズな体験を提供
+    setTimeout(function() {
+        if (loadingScreen) {
+            loadingScreen.classList.add('loaded');
+        }
+    }, 1000);
+});
+
 // スムーズスクロール
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

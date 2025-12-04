@@ -1,3 +1,116 @@
+/* ローディング画面 */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loading-screen.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-content {
+    text-align: center;
+    animation: fadeInScale 0.8s ease;
+}
+
+.loading-logo {
+    margin-bottom: 3rem;
+    animation: logoFloat 2s ease-in-out infinite;
+}
+
+.loading-logo img {
+    max-width: 400px;
+    width: 80%;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.spinner-bar {
+    width: 4px;
+    height: 40px;
+    background: #ff0000;
+    animation: spinnerPulse 1.2s ease-in-out infinite;
+}
+
+.spinner-bar:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.spinner-bar:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.spinner-bar:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes spinnerPulse {
+    0%, 100% {
+        transform: scaleY(0.4);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.loading-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    color: #ffffff;
+    opacity: 0.7;
+    animation: textPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+    0%, 100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
 /* リセットとベース設定 */
 * {
     margin: 0;
@@ -988,6 +1101,19 @@ section {
 
 /* モバイル */
 @media (max-width: 768px) {
+    .loading-logo img {
+        max-width: 280px;
+    }
+
+    .spinner-bar {
+        width: 3px;
+        height: 30px;
+    }
+
+    .loading-text {
+        font-size: 0.9rem;
+    }
+
     .nav-container {
         padding: 1rem;
     }
@@ -1104,10 +1230,39 @@ section {
     .btn-floating-icon {
         font-size: 1.3rem;
     }
+
+    .calendar-legend {
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .legend-item {
+        gap: 0.4rem;
+        font-size: 0.85rem;
+    }
+
+    .legend-color {
+        width: 24px;
+        height: 24px;
+    }
 }
 
 /* 極小デバイス */
 @media (max-width: 480px) {
+    .loading-logo img {
+        max-width: 220px;
+    }
+
+    .spinner-bar {
+        width: 2px;
+        height: 25px;
+    }
+
+    .loading-text {
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+    }
+
     .logo-image {
         height: 35px;
     }
@@ -1187,6 +1342,25 @@ section {
 
     .btn-floating-text {
         font-size: 0.85rem;
+    }
+
+    .calendar-legend {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        padding: 0 1rem;
+    }
+
+    .legend-item {
+        gap: 0.4rem;
+        font-size: 0.8rem;
+        width: 100%;
+    }
+
+    .legend-color {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
     }
 }
 
@@ -1280,7 +1454,8 @@ section {
 .calendar-legend {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
